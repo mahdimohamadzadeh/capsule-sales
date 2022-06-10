@@ -33,13 +33,6 @@ export default {
       error: null,
     }
   },
-  async mounted() {
-    try {
-      this.restaurants = await this.$strapi.$restaurants.find()
-    } catch (error) {
-      this.error = error
-    }
-  },
 }
 </script>
 

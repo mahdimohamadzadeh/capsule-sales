@@ -2,23 +2,17 @@
   <div>
     <v-row class="d-flex justify-center flex-column">
       <Hero />
-      <LargeCardDisplay
-        v-for="allCard in allLargesCards"
-        :key="allCard.id"
-        :allCard="allCard"
-      />
-      <SmallCardDisplay
-        v-for="allCard in allSmallsCard"
-        :key="allCard.id"
-        :allCard="allCard"
+      <ProductsDisplay
+        v-for="product in products"
+        :key="product.id"
+        :product="product.attributes"
+        :id="product.id"
       />
     </v-row>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import axios from 'axios'
 export default {
   head: {
     title: 'Home page',
@@ -30,13 +24,13 @@ export default {
       },
     ],
   },
-  asyncData() {
-    axios
-      .get('http://localhost:1337/api/restaurants')
-      .then((res) => console.log(res))
+  async asyncData({ $axios, env }) {
+    let data = await $axios.$get(`${env.baseUrl}/products`)
+    let products = data.data
+    return { products }
   },
-  computed: {
-    ...mapGetters(['allLargesCards', 'allSmallsCard', 'getProductById']),
-  },
+  // computed: {
+  //   ...mapGetters(['allLargesCards', 'allSmallsCard', 'getProductById']),
+  // },
 }
 </script>

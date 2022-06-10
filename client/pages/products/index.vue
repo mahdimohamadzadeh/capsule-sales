@@ -1,22 +1,18 @@
 <template>
   <div>
     <div class="d-flex flex-column">
-      <LargeCardDisplay
-        v-for="allCard in allLargesCards"
-        :key="allCard.id"
-        :allCard="allCard"
-      />
-      <SmallCardDisplay
-        v-for="allCard in allSmallsCard"
-        :key="allCard.id"
-        :allCard="allCard"
+      <Hero />
+      <ProductsDisplay
+        v-for="product in products"
+        :key="product.id"
+        :product="product.attributes"
+        :id="product.id"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   head: {
     title: 'products page',
@@ -24,17 +20,16 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'show all products'
-      }
+        content: 'show all products',
+      },
     ],
   },
-  asyncData({ store }) {
-    return store.dispatch("getLargeCardSections","getSmallCardSections");
+  async asyncData({ $axios, env }) {
+    let data = await $axios.$get(`${env.baseUrl}/products`)
+    let products = data.data
+    return { products }
   },
-  computed: {
-    ...mapGetters(["allLargesCards", "allSmallsCard"]),
-  },
-};
+}
 </script>
 
 <style lang="scss" scoped></style>

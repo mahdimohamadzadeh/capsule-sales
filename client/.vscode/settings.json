@@ -1,7 +1,13 @@
 {
     "nuxt.isNuxtApp": true,
     "cSpell.words": [
+        "axios",
         "gsap",
-        "strapi"
+        "lintfix",
+        "nuxt",
+        "nuxtjs",
+        "strapi",
+        "vuetify",
+        "vuex"
     ]
 }

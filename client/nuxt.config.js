@@ -52,7 +52,7 @@ export default {
   ],
 
   strapi: {
-    entities: ['restaurants', 'categories'],
+    entities: ['products', 'categories'],
     url: 'http://localhost:1337'
   },
   pageTransition: {
@@ -104,7 +104,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseUrl: 'http://localhost:1337/api',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -136,11 +136,14 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   loading: {
-      color: '#42D3CF',
-      height: '4px',
-    },
-    loadingIndicator: {
-      name: 'circle',
-      color: '#42D3CF'
-    },
+    color: '#42D3CF',
+    height: '4px',
+  },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#42D3CF'
+  },
+  env: {
+    baseUrl:  'http://localhost:1337/api'
+  },
 }

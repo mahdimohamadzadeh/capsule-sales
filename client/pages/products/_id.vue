@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>hello</h1>
     <!-- <div v-if="product" class="countainer">
       <div class="Top-countainer">
         <div class="Image-countainer">
@@ -57,12 +58,11 @@
       <Reviwo/>
     </div>
     <div v-else><Error/></div> -->
-    {{product}}
   </div>
 </template>
 
 <script>
-import Error from "../../components/Erorr.vue";
+import Error from '../../components/Erorr.vue'
 export default {
   head: {
     title: 'details product page',
@@ -70,17 +70,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'details product'
-      }
+        content: 'details product',
+      },
     ],
   },
-    computed: {
-        product() {
-            return this.$store.getters.getProductById(1);
-        },
-    },
-    components: { Error }
-};
+  async asyncData({ $axios, env, params }) {
+    let data = await $axios.$get(`${env.baseUrl}/products/${params.id}`)
+    const product = data.data.attributes
+    return { product }
+  },
+  components: { Error },
+}
 </script>
 
 <style scoped>
@@ -120,12 +120,12 @@ export default {
   font-size: 13px;
   text-align: justify;
 }
-.main{
+.main {
   margin-left: 7px;
   width: 100%;
   height: 80px;
 }
-.countainer > p{
+.countainer > p {
   margin-top: 15px;
 }
 </style>

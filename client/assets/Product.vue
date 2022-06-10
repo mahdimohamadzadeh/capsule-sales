@@ -1,6 +1,5 @@
 <template>
     <NuxtLink class="text-decoration-none" :to="`/products/${id}`">
-    
         <v-card elevation="0" class="my-4 mr-4" :class="classStyle" max-width="215">
     
             <v-img height="250" :src="require(`../assets/image/${card.image || 'fe1.jpg'}`)" :lazy-src="require(`../assets/image/${card.image || 'fe1.jpg'}`)">
@@ -19,7 +18,6 @@
               ></v-progress-circular>
     
             </v-row>
-</template>
     </v-img>
 
       <v-card-title>{{ card.title }}</v-card-title>
@@ -35,7 +33,7 @@
 
 <script>
 export default {
-    name: "LargeCard",
+    name: "Products",
     props: ["card", "id", "classStyle"],
 };
 </script>
