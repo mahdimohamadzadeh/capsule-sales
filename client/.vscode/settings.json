@@ -2,10 +2,12 @@
     "nuxt.isNuxtApp": true,
     "cSpell.words": [
         "axios",
+        "countainer",
         "gsap",
         "lintfix",
         "nuxt",
         "nuxtjs",
+        "padless",
         "strapi",
         "vuetify",
         "vuex"

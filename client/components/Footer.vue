@@ -1,9 +1,9 @@
 <template>
   <v-footer padless>
-    <v-card class="flex grey darken-4 " flat tile dark >
+    <v-card class="flex grey darken-4 " flat tile >
       <v-card-title >
-        <strong class="subheading "
-          >Get connected with us on social networks!</strong
+        <strong class="subheading subtitle-1 "
+          >Sheep are afraid of wolves all their lives, but in the end it is the shepherd who eats them.</strong
         >
 
         <v-spacer class="text-center"

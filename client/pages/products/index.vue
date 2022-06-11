@@ -1,13 +1,34 @@
 <template>
   <div>
     <div class="d-flex flex-column">
-      <Hero />
-      <ProductsDisplay
-        v-for="product in products"
-        :key="product.id"
-        :product="product.attributes"
-        :id="product.id"
-      />
+      <v-container>
+        <v-row>
+          <v-col>
+            <ProductsDisplay
+              v-for="product in products"
+              :key="product.id"
+              :product="product.attributes"
+              :id="product.id"
+            />
+          </v-col>
+          <v-col>
+            <ProductsDisplay
+              v-for="product in products"
+              :key="product.id"
+              :product="product.attributes"
+              :id="product.id"
+            />
+          </v-col>
+          <v-col>
+            <ProductsDisplay
+              v-for="product in products"
+              :key="product.id"
+              :product="product.attributes"
+              :id="product.id"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
   </div>
 </template>
