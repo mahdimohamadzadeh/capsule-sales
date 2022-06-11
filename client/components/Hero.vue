@@ -34,19 +34,3 @@ export default {
   name: "Hero",
 };
 </script>
-
-<style scoped>
-.center-erorr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.center-erorr > h1 {
-  font-size: 2.5rem;
-}
-.center-erorr > img {
-  width: 10rem;
-  margin: 0 auto;
-}
-</style>
