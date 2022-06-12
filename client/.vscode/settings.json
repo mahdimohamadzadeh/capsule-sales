@@ -4,12 +4,17 @@
         "axios",
         "countainer",
         "gsap",
+        "iconfont",
         "lintfix",
+        "materialdesignicons",
         "nuxt",
         "nuxtjs",
         "padless",
         "strapi",
+        "Vazir",
         "vuetify",
-        "vuex"
+        "vuex",
+        "خرید",
+        "قیمت"
     ]
 }

@@ -16,7 +16,7 @@
         >
         </v-img>
       </v-card> -->
-    <v-card class="mx-auto" max-width="344">
+    <v-card class="mx-auto" max-width="330">
       <nuxt-link :to="`/products/${id}`"
         ><v-img
           :src="require(`../assets/image/${product.src || 'fe1.jpg'}`)"
@@ -24,19 +24,19 @@
           height="200px"
         ></v-img
       ></nuxt-link>
-      <v-card-title> {{ product.title }} </v-card-title>
+      <h3 class="text-justify title"> {{ product.title }} </h3>
       <v-spacer />
-      <v-card-subtitle class="ma1">price: ${{ product.price }}</v-card-subtitle>
+      <v-card-subtitle >قیمت: {{ product.price }}$</v-card-subtitle>
       <v-card-actions>
         <nuxt-link :to="`/products/${id}`" class="text-decoration-none"
-          ><v-btn color="orange lighten-2 ripple text " text>
-            Explore
+          ><v-btn class="text-body-1" color="orange darken-2 ripple">
+            خرید
           </v-btn></nuxt-link
         >
         <v-spacer></v-spacer>
 
         <v-btn icon @click="show = !show">
-          <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+          <v-icon color="orange darken-2">{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         </v-btn>
       </v-card-actions>
 
@@ -64,3 +64,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.title{
+  margin: 20px;
+}
+</style>

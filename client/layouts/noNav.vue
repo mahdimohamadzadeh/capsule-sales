@@ -1,5 +1,5 @@
 <template>
-  <v-app class="container">
+  <v-app>
     <v-main>
       <v-container>
         <Nuxt />
@@ -9,9 +9,12 @@
 </template>
 
 <style scoped>
-.container{
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+* {
+  direction: rtl;
 }
 </style>

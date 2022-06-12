@@ -27,18 +27,22 @@ export default {
       type: 'image/x-icon',
       href: '/favicon.ico'
     }],
-  },
+    link: [{
+      rel: 'stylesheet',
+      type: 'text/css',
+      href: 'https://cdn.tutorialjinni.com/vazir-font/30.1.0/Farsi-Digits/font-face-FD.css'
+    }],
+    link: [{
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css'
+    }],
 
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{
-      src: '@/plugins/vue-calendar.js',
-      mode: 'client'
-    },
-    '@/plugins/vuetify.js'
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -119,6 +123,8 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: false,
     theme: {
       dark: true,
       themes: {
@@ -139,7 +145,7 @@ export default {
   build: {},
   loading: {
     color: '#42D3CF',
-    height: '4px',
+    height: '2px',
   },
   loadingIndicator: {
     name: 'circle',

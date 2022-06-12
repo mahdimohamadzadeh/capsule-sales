@@ -3,7 +3,8 @@
     <v-card class="flex grey darken-4 " flat tile >
       <v-card-title >
         <strong class="subheading subtitle-1 "
-          >Sheep are afraid of wolves all their lives, but in the end it is the shepherd who eats them.</strong
+          >گوسفندها تمام عمر از گرگ می ترسند، اما در نهایت این چوپان است که آنها را می خورد.
+</strong
         >
 
         <v-spacer class="text-center"
@@ -26,3 +27,5 @@ export default {
   }),
 };
 </script>
+
+// Sheep are afraid of wolves all their lives, but in the end it is the shepherd who eats them.
