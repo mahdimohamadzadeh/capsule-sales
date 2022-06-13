@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products_purchaseds",
+  "info": {
+    "singularName": "products-purchased",
+    "pluralName": "products-purchaseds",
+    "displayName": "Products purchased"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "src": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
