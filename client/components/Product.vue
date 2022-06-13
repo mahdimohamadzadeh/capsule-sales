@@ -1,38 +1,41 @@
 <template>
   <v-card class="mx-auto mt-6" max-width="900">
     <v-img
-      class="white--text align-end"
+      class="white--text align-end img"
+      :opacity="0.2"
+      :aspect-ratio="16 / 9"
       height="300px"
       :src="require(`../assets/image/${product.src || 'fe1.jpg'}`)"
       :lazy-src="require(`../assets/image/${product.src || 'fe1.jpg'}`)"
     >
-      <v-card-title>{{ product.title }}</v-card-title>
+      <v-card-title class="text-body-2 title">{{ product.title }}</v-card-title>
     </v-img>
-
-    <v-card-subtitle class="pb-0"> product-number : {{ id }} </v-card-subtitle>
+    <v-card-subtitle class="pb-0 text-subtitle-1">
+      محصول شماره : {{ id }}
+    </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div class="heading mt-2">price:${{ product.price }}</div>
+      <div class="text-subtitle-1 mt-2">قیمت: {{ product.price }}$</div>
 
-      <div class="caption ml-2 ">
+      <div class="text-body-2 mt-4 mr-1">
         {{ product.description }}
       </div>
     </v-card-text>
 
     <v-card-actions>
-      <v-btn color="orange" text> Share </v-btn>
+      <v-btn @click="$emit('buyCapsules')" class="text-body-1" color="orange darken-2 ripple"> خرید </v-btn>
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+        <v-icon color="orange darken-2">mdi-heart</v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-bookmark</v-icon>
+        <v-icon color="orange darken-2">mdi-bookmark</v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-share-variant</v-icon>
+        <v-icon color="orange darken-2">mdi-share-variant</v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -45,4 +48,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.img {
+  direction: ltr;
+  opacity: 0.7;
+}
+.title {
+  opacity: 1;
+}
+</style>

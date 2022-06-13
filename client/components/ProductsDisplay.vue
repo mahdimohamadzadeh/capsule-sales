@@ -29,8 +29,8 @@
       <v-card-subtitle >قیمت: {{ product.price }}$</v-card-subtitle>
       <v-card-actions>
         <nuxt-link :to="`/products/${id}`" class="text-decoration-none"
-          ><v-btn class="text-body-1" color="orange darken-2 ripple">
-            خرید
+          ><v-btn class="text-body-1 grey--text text--lighten-3" color="orange darken-2 ripple">
+            مشاهده محصول
           </v-btn></nuxt-link
         >
         <v-spacer></v-spacer>

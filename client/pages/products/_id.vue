@@ -1,13 +1,19 @@
 <template>
   <div>
     <div v-if="product">
-      <Product :product="product.attributes" :id="product.id" />
+      <Product
+        @buyCapsules="buyCapsules"
+        :product="product.attributes"
+        :id="product.id"
+      />
     </div>
     <div v-else><Error /></div>
   </div>
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
   head: {
     title: 'details product page',
@@ -24,6 +30,40 @@ export default {
     const product = data.data
     return { product }
   },
-  components: { Error },
+  methods: {
+    buyCapsules() {
+      let data = {
+        title: this.product.attributes.title,
+        description: this.product.attributes.description,
+        src: this.product.attributes.src,
+      }
+      this.$axios
+        .post('http://localhost:1337/api/products-purchaseds', {
+          data,
+        })
+        .then((res) => {
+          if (res.data) {
+            Swal.fire({
+            title: 'محصول با موفقیت خریداری شد',
+            icon: 'success',
+            iconColor: 'green',
+            timerProgressBar: true,
+            timer: 4000,
+          })
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+          Swal.fire({
+            title: 'خطا!',
+            text: ' خرید محصول با خطا مواجه شد',
+            icon: 'error',
+            iconColor: 'red',
+            timerProgressBar: true,
+            timer: 4000,
+          })
+        })
+    },
+  },
 }
 </script>

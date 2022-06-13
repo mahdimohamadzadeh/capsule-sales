@@ -11,9 +11,12 @@
         "nuxtjs",
         "padless",
         "strapi",
+        "Swal",
         "Vazir",
         "vuetify",
         "vuex",
+        "Zindex",
+        "تایید",
         "خرید",
         "قیمت"
     ]
