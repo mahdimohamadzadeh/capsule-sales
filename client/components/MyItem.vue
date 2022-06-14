@@ -1,34 +1,38 @@
 <template>
-  <div class="item-container">
-    <img :src="require(`../assets/image/${item.image}`)" alt="" />
-    <div class="text-container">
-      <h4>{{ item.title }}</h4>
-      <p>{{ item.description }}</p>
-    </div>
+  <div class="my-10">
+    <v-card class="mx-9" max-width="300" :loading="loading">
+      <template slot="progress">
+        <v-progress-linear
+          color="yellow"
+          height="5"
+          indeterminate
+        ></v-progress-linear>
+      </template>
+      <v-img
+        :src="require(`../assets/image/${product.src || 'fe1.jpg'}`)"
+        :lazy-src="require(`../assets/image/${product.src || 'fe1.jpg'}`)"
+        height="250"
+      ></v-img>
+      <h3 class="title">{{ product.title }}</h3>
+      <v-card-subtitle>محصول شماره:{{ id }}</v-card-subtitle>
+      <v-card-text>{{ product.description }}</v-card-text>
+      <v-card-actions>
+        <v-btn color="error" @click="$emit('deleteProduct', id)"
+          >حذف محصول</v-btn
+        >
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["item"],
-};
+  props: ['loading', 'product', 'id'],
+}
 </script>
 
 <style scoped>
-.item-container {
-  display: flex;
-  margin: 3rem 0;
-}
-.text-container {
-  padding: 0 1rem;
-}
-img {
-  width: 17.5rem;
-  border-radius: 0.5rem;
-  height: 11rem;
-}
-p {
-  font-size: 0.8rem;
-  color: grey;
+.title {
+  margin: 20px 20px 0 20px;
 }
 </style>

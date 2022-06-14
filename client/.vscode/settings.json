@@ -10,14 +10,18 @@
         "nuxt",
         "nuxtjs",
         "padless",
+        "purchaseds",
         "strapi",
         "Swal",
+        "sweetalert",
         "Vazir",
         "vuetify",
         "vuex",
         "Zindex",
         "تایید",
         "خرید",
-        "قیمت"
+        "شماره",
+        "قیمت",
+        "محصول"
     ]
 }

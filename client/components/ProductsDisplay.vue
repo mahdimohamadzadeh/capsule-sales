@@ -24,26 +24,42 @@
           height="200px"
         ></v-img
       ></nuxt-link>
-      <h3 class="text-justify title"> {{ product.title }} </h3>
-      <v-spacer />
-      <v-card-subtitle >قیمت: {{ product.price }}$</v-card-subtitle>
+      <h3 class="text-justify title">{{ product.title }}</h3>
+      <v-card-subtitle>قیمت: {{ product.price }}$</v-card-subtitle>
       <v-card-actions>
         <nuxt-link :to="`/products/${id}`" class="text-decoration-none"
-          ><v-btn class="text-body-1 grey--text text--lighten-3" color="orange darken-2 ripple">
+          ><v-btn
+            class="text-body-1 grey--text text--lighten-3"
+            color="orange darken-2 ripple"
+          >
             مشاهده محصول
           </v-btn></nuxt-link
         >
         <v-spacer></v-spacer>
 
         <v-btn icon @click="show = !show">
-          <v-icon color="orange darken-2">{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+          <v-icon color="orange darken-2">{{
+            show ? 'mdi-chevron-up' : 'mdi-chevron-down'
+          }}</v-icon>
         </v-btn>
       </v-card-actions>
+      <v-card-text class="mt-2">
+        <v-row align="center" class="mx-0">
+          <v-rating
+            :value="3"
+            color="orange lighten-2"
+            dense
+            half-increments
+            size="16"
+          ></v-rating>
+
+          <div class="grey--text ms-4">4.5</div>
+        </v-row>
+      </v-card-text>
 
       <v-expand-transition>
         <div v-show="show">
           <v-divider></v-divider>
-
           <v-card-text>
             {{ product.description }}
           </v-card-text>
@@ -66,7 +82,7 @@ export default {
 </script>
 
 <style scoped>
-.title{
-  margin: 20px;
+.title {
+  margin: 20px 20px 0 20px;
 }
 </style>

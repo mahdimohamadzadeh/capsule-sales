@@ -42,25 +42,42 @@ export default {
           data,
         })
         .then((res) => {
-          if (res.data) {
-            Swal.fire({
-            title: 'محصول با موفقیت خریداری شد',
-            icon: 'success',
-            iconColor: 'green',
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
             timerProgressBar: true,
-            timer: 4000,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            },
           })
+
+          if (res.data) {
+            Toast.fire({
+              icon: 'success',
+              title: 'محصول با موفقیت خریداری شد',
+            })
           }
         })
         .catch((e) => {
           console.log(e)
-          Swal.fire({
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            },
+          })
+          Toast.fire({
+            icon: 'error',
             title: 'خطا!',
             text: ' خرید محصول با خطا مواجه شد',
-            icon: 'error',
-            iconColor: 'red',
-            timerProgressBar: true,
-            timer: 4000,
           })
         })
     },
