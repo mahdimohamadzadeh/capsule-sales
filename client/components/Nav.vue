@@ -16,8 +16,8 @@
         <v-spacer></v-spacer>
         <v-menu left bottom>
           <template v-slot:activator="{ on, attrs }">
-            <nuxt-link  v-bind="attrs" v-on="on" class="text-decoration-none text--white white--text" to="/my-item"
-              >کپسول های من</nuxt-link
+            <nuxt-link  v-bind="attrs" v-on="on" class="text-decoration-none text--white white--text" to="/my-items"
+              >سبد خرید</nuxt-link
             >
             <nuxt-link  class="text-decoration-none text--white white--text ml-4" to="/products"
               >لیست محصولات</nuxt-link
@@ -32,7 +32,7 @@
           >
             <nuxt-link
               to="/"
-              class=" text-decoration-none"
+              class="text-decoration-none"
             >
               <v-list-item>
                 <v-list-item-icon class="ma-4">

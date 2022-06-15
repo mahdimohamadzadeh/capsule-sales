@@ -1,35 +1,30 @@
 <template>
   <div>
-    <div class="center-erorr">
-      <img src="../assets/image/fe25.jpg" alt="" />
-      <h1 v-if="statusCode === 404">Page Not Found</h1>
-      <h1 v-else>An error occurred -  </h1>
-    </div>
-    <NuxtLink class="d-flex justify-center text-h6" to="/">
-      Home page
-    </NuxtLink>
+    <v-card class="mx-auto my-2" max-width="374">
+      <v-img
+        height="450"
+        :src="require('../assets/image/fe25.jpg')"
+        :lazy-src="require('../assets/image/fe25.jpg')"
+      >
+      </v-img>
+      <v-card-title v-if="statusCode === 404">
+        صحفه مورد نظر پیدا نشد
+      </v-card-title>
+      <v-card-title v-else> خطایی رخ داد </v-card-title>
+      <v-card-actions class="justify-center">
+        <v-btn elevation="4" color="orange darken-3"
+          ><NuxtLink class="text-h6 white--text" to="/">
+            صحفه اصلی
+          </NuxtLink></v-btn
+        >
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Error",
-  props: ["statusCode"],
-};
+  name: 'Error',
+  props: ['statusCode'],
+}
 </script>
-
-<style scoped>
-.center-erorr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.center-erorr > h1 {
-  font-size: 2.5rem;
-}
-.center-erorr > img {
-  width: 10rem;
-  margin: 0 auto;
-}
-</style>

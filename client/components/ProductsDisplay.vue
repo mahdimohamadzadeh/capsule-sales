@@ -46,14 +46,14 @@
       <v-card-text class="mt-2">
         <v-row align="center" class="mx-0">
           <v-rating
-            :value="3"
+            rtl
+            :value="product.rate"
             color="orange lighten-2"
             dense
             half-increments
             size="16"
+            readonly
           ></v-rating>
-
-          <div class="grey--text ms-4">4.5</div>
         </v-row>
       </v-card-text>
 
