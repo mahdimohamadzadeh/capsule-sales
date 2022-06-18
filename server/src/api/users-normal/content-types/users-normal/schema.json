@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_normals",
+  "info": {
+    "singularName": "users-normal",
+    "pluralName": "users-normals",
+    "displayName": "usersNormal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "userName": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    }
+  }
+}
