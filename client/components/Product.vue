@@ -23,7 +23,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn @click="$emit('buyCapsules')" class="text-body-1" color="orange darken-2 ripple"> خرید </v-btn>
+      <slot />
       <v-spacer></v-spacer>
 
       <v-btn icon>

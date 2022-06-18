@@ -9,12 +9,18 @@
         <Btn
           btnStyle="text-body-1"
           @click="$emit('buyCapsules')"
-          color="orange darken-2  ripple"
-          >خرید</Btn
+          color="red  ripple"
+          >حذف</Btn
+        >
+        <Btn
+          btnStyle="text-body-1 mr-2"
+          @click="$emit('buyCapsules')"
+          color="blue  ripple"
+          >ویرایش</Btn
         >
       </Product>
     </div>
-    <div v-else><Error /></div>
+    <!-- <div v-else><Error /></div> -->
   </div>
 </template>
 
@@ -22,6 +28,7 @@
 import Swal from 'sweetalert2'
 
 export default {
+  layout: 'admin',
   head: {
     title: 'details product page',
     meta: [

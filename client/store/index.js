@@ -1,50 +1,25 @@
-// export const state = () => ({
-//   products: [],
-// })
+export const state = () => ({
+  user: null
+})
 
-// export const actions = {
-//   async getProducts({
-//     commit
-//   }) {
-//     const data = (await this.$axios.get('')).data
-//     commit('SET_PRODUCTS', data)
-//   }
-// }
-// export const getters = {
-//   allLargesCards: (state) => {
-//     return state.largeCards
-//   },
-//   allSmallsCard: (state) => {
-//     return state.smallCards
-//   },
-//   getProductById: (state) => (id) => {
-//     function getAllCards() {
-//       let large = Array(largeCardSections)[0].filter(section => section)
-//       let small = state.smallCards
-//       console.log(large);
-//       // let cardsLarge;
-//       // let cardsSmall;
-//       // for (let i = 0; i < large.length; i++) {
-//       //   cardsLarge = large[i];
-//       // }
-//       // for (let i = 0; i < small.length; i++) {
-//       //   cardsSmall = small[i];
-//       // }
-//       // let cards = cardsSmall.cards.concat(cardsLarge.cards)
-//       // const arrayMix = []
-//       // arrayMix.push(cards)
+export const actions = {
+  async nuxtServerInit({
+    dispatch
+  }) {
+    await dispatch('getAdmin')
+  },
+  async getAdmin({
+    commit
+  }) {
+    const data = (await this.$axios.get('http://localhost:8082/api/users-normals')).data
+    data.data.forEach(user => {
+      commit("SET_USERS", user)
+    });
 
-//     }
-//     // let cards = getAllCards()[0]
-//     // let cardByID = cards.filter(function (card) {
-//     //   return card.id == id
-//     // })
-//     return getAllCards()
-//   }
-// }
-// export const mutations = {
-//   SET_PRODUCTS(state, data) {
-//     console.table(data);
-//     state.products = data.attributes
-//   }
-// }
+  }
+}
+export const mutations = {
+  SET_USERS(state, user) {
+    state.user = user.attributes
+  }
+}

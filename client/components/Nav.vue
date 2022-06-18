@@ -16,10 +16,16 @@
         <v-spacer></v-spacer>
         <v-menu left bottom>
           <template v-slot:activator="{ on, attrs }">
-            <nuxt-link  v-bind="attrs" v-on="on" class="text-decoration-none text--white white--text" to="/my-items"
+            <nuxt-link
+              v-bind="attrs"
+              v-on="on"
+              class="text-decoration-none text--white white--text"
+              to="/my-items"
               >سبد خرید</nuxt-link
             >
-            <nuxt-link  class="text-decoration-none text--white white--text ml-4" to="/products"
+            <nuxt-link
+              class="text-decoration-none text--white white--text ml-4"
+              to="/products"
               >لیست محصولات</nuxt-link
             >
           </template>
@@ -27,13 +33,8 @@
       </v-app-bar>
       <v-navigation-drawer v-model="drawer" absolute temporary right>
         <v-list nav dense>
-          <v-list-item-group
-            v-model="group"
-          >
-            <nuxt-link
-              to="/"
-              class="text-decoration-none"
-            >
+          <v-list-item-group v-model="group">
+            <nuxt-link to="/" class="text-decoration-none">
               <v-list-item>
                 <v-list-item-icon class="ma-4">
                   <v-icon>mdi-home</v-icon>
@@ -41,15 +42,20 @@
                 <v-list-item-title>خانه</v-list-item-title>
               </v-list-item>
             </nuxt-link>
-            <nuxt-link
-              to="/products"
-              class=" text-decoration-none"
-            >
+            <nuxt-link to="/products" class="text-decoration-none">
               <v-list-item>
                 <v-list-item-icon class="ma-4">
                   <v-icon>mdi-basket</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>محصولات</v-list-item-title>
+              </v-list-item>
+            </nuxt-link>
+            <nuxt-link to="/admin-panel" class="text-decoration-none">
+              <v-list-item>
+                <v-list-item-icon class="ma-4">
+                  <v-icon>mdi-user</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>ادمین</v-list-item-title>
               </v-list-item>
             </nuxt-link>
           </v-list-item-group>
@@ -61,11 +67,10 @@
 
 <script>
 export default {
-  name: "AppHeader",
+  name: 'AppHeader',
   data: () => ({
     drawer: false,
     group: null,
   }),
-};
+}
 </script>
-

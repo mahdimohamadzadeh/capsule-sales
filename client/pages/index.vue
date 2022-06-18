@@ -9,6 +9,7 @@
             :key="product.id"
             :product="product.attributes"
             :id="product.id"
+            linkId="/products/"
           />
         </v-col>
         <v-col>
@@ -17,6 +18,7 @@
             :key="product.id"
             :product="product.attributes"
             :id="product.id"
+            linkId="/products/"
           />
         </v-col>
         <v-col>
@@ -25,6 +27,7 @@
             :key="product.id"
             :product="product.attributes"
             :id="product.id"
+            linkId="/products/"
           />
         </v-col>
       </v-row>

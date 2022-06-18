@@ -9,7 +9,7 @@
               :key="product.id"
               :product="product.attributes"
               :id="product.id"
-              linkId="/products/"
+              linkId="/admin-panel/products/"
             />
           </v-col>
           <v-col>
@@ -18,7 +18,7 @@
               :key="product.id"
               :product="product.attributes"
               :id="product.id"
-              linkId="/products/"
+              linkId="/admin-panel/products/"
             />
           </v-col>
           <v-col>
@@ -27,7 +27,7 @@
               :key="product.id"
               :product="product.attributes"
               :id="product.id"
-              linkId="/products/"
+              linkId="/admin-panel/products/"
             />
           </v-col>
         </v-row>
@@ -38,8 +38,9 @@
 
 <script>
 export default {
+  layout: 'admin',
   head: {
-    title: 'products page',
+    title: 'products',
     meta: [
       {
         hid: 'description',

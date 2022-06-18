@@ -2,6 +2,7 @@
     "nuxt.isNuxtApp": true,
     "cSpell.words": [
         "axios",
+        "chartjs",
         "confrim",
         "countainer",
         "gsap",
@@ -12,6 +13,7 @@
         "nuxtjs",
         "padless",
         "purchaseds",
+        "sparkline",
         "strapi",
         "Swal",
         "sweetalert",
@@ -19,6 +21,7 @@
         "vuetify",
         "vuex",
         "Zindex",
+        "ادمین",
         "تایید",
         "خرید",
         "درحال",
