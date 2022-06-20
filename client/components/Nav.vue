@@ -31,7 +31,7 @@
           </template>
         </v-menu>
       </v-app-bar>
-      <v-navigation-drawer v-model="drawer" absolute temporary right>
+      <v-navigation-drawer v-model="drawer" fixed temporary right>
         <v-list nav dense>
           <v-list-item-group v-model="group">
             <nuxt-link to="/" class="text-decoration-none">
@@ -53,7 +53,7 @@
             <nuxt-link to="/admin-panel" class="text-decoration-none">
               <v-list-item>
                 <v-list-item-icon class="ma-4">
-                  <v-icon>mdi-user</v-icon>
+                  <v-icon>mdi-account</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>ادمین</v-list-item-title>
               </v-list-item>

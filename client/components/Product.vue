@@ -1,5 +1,12 @@
 <template>
-  <v-card class="mx-auto mt-6" max-width="900">
+  <v-card :loading="loading" class="mx-auto mt-6" max-width="900">
+    <template slot="progress" v-if="loading">
+      <v-progress-linear
+        color="green"
+        height="5"
+        indeterminate
+      ></v-progress-linear>
+    </template>
     <v-img
       class="white--text align-end img"
       :opacity="0.2"
@@ -44,7 +51,21 @@
 <script>
 export default {
   name: 'Product',
-  props: ['product', 'id'],
+  props: {
+    product: {
+      type: Object,
+      require: true,
+    },
+    id: {
+      type: Number,
+      require: true,
+    },
+    loading: {
+      type: Boolean,
+      require: false,
+      default: false,
+    },
+  },
 }
 </script>
 

@@ -5,9 +5,11 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: 'خانه', icon: 'mdi-home-city', link: '/admin-panel' },
+        { title: 'صحفه ادمین', icon: 'mdi-home-city', link: '/admin-panel' },
         { title: 'پروفایل', icon: 'mdi-account', link: '/admin-panel/profile' },
         { title: 'محصولات', icon: 'mdi-basket', link: '/admin-panel/products' },
+        { title: 'اضافه کردن محصول جدید', icon: 'mdi-basket-plus', link: '/admin-panel/new-product' },
+        { title: 'خانه', icon: 'mdi-home', link: '/' },
       ],
       mini: true,
       group: null,
@@ -29,7 +31,7 @@ export default {
       <v-toolbar-title class="mr-16">پنل ادمین</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer
-      height="250"
+      height="400"
       width="250"
       v-model="drawer"
       :mini-variant.sync="mini"

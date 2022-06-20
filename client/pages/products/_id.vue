@@ -8,7 +8,7 @@
       >
         <Btn
           btnStyle="text-body-1"
-          @click="$emit('buyCapsules')"
+          @click="buyCapsules"
           color="orange darken-2  ripple"
           >خرید</Btn
         >

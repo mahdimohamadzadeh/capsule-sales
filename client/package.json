@@ -19,6 +19,7 @@
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "nuxt-gsap-module": "^1.7.1",
+    "remove": "^0.1.5",
     "sweetalert2": "^11.4.17",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
@@ -31,6 +32,8 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/vuetify": "^1.12.3",
     "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.4"
   }
 }

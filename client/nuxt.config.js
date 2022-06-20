@@ -146,7 +146,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   loading: {
-    color: '#42D3CF',
+    color: '#be2596',
     height: '2px',
   },
   loadingIndicator: {
