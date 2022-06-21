@@ -45,7 +45,7 @@ export default {
         src: this.product.attributes.src,
       }
       this.$axios
-        .post('http://localhost:8082/api/products-purchaseds', {
+        .post('http://localhost:1337/api/products-purchaseds', {
           data,
         })
         .then((res) => {

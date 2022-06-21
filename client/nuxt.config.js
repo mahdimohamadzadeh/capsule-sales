@@ -112,7 +112,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseUrl: 'http://localhost:8082/api',
+    baseUrl: 'http://localhost:1337/api',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -154,6 +154,6 @@ export default {
     color: '#42D3CF'
   },
   env: {
-    baseUrl: 'http://localhost:8082/api'
+    baseUrl: 'http://localhost:1337/api'
   },
 }

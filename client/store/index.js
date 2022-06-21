@@ -11,7 +11,7 @@ export const actions = {
   async getAdmin({
     commit
   }) {
-    const data = (await this.$axios.get('http://localhost:8082/api/users-normals')).data
+    const data = (await this.$axios.get('http://localhost:1337/api/users-normals')).data
     data.data.forEach(user => {
       commit("SET_USERS", user)
     });

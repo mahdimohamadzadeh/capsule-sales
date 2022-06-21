@@ -2,7 +2,7 @@
   <div>
     <div v-if="product">
       <Product
-        :loading="loading"
+        :loading="loadingDelete"
         :product="product.attributes"
         :id="+product.id"
       >
@@ -17,12 +17,14 @@
       </Product>
     </div>
     <div v-else><Error /></div>
-    <FormEdit
+    <Form
+      :loading="loadingForm"
       id="edit"
       @submit="onSubmitted"
       :productAttributes="product.attributes"
       v-if="edit"
-    />
+      >ویرایش محصول</Form
+    >
   </div>
 </template>
 
@@ -50,7 +52,8 @@ export default {
     return {
       edit: false,
       input: '',
-      loading: false,
+      loadingDelete: false,
+      loadingForm: false,
       errorText: '',
     }
   },
@@ -69,7 +72,7 @@ export default {
         confirmButtonColor: '#FF1B1B',
       }).then((isConfirm) => {
         if (isConfirm.isConfirmed) {
-          this.loading = true
+          this.loadingDelete = true
           this.$axios
             .delete(`${process.env.baseUrl}/products/${id}`)
             .then(() => {
@@ -110,7 +113,7 @@ export default {
                 title: 'خطا!',
                 text: 'حذف محصول با خطا مواجهه شد',
               }).finally(() => {
-                this.loading = false
+                this.loadingDelete = false
               })
             })
         }
@@ -137,7 +140,7 @@ export default {
           confirmButtonColor: '#FF1B1B',
         }).then((isConfirm) => {
           if (isConfirm.isConfirmed) {
-            this.loading = true
+            this.loadingForm = true
             this.$axios
               .put(`${process.env.baseUrl}/products/${id}`, {
                 data: { ...value },
@@ -160,7 +163,6 @@ export default {
                 })
               })
               .then(() => {
-                this.loading = false
                 this.$nuxt.refresh()
               })
               .then(() => {
@@ -192,7 +194,7 @@ export default {
                   title: 'خطا!',
                   text: this.errorText,
                 }).finally(() => {
-                  this.loading = false
+                  this.loadingForm = false
                 })
               })
           }
@@ -214,7 +216,7 @@ export default {
           title: 'خطا!',
           text: 'محتوا تعغیری نکرده است',
         }).finally(() => {
-          this.loading = false
+          this.loadingForm = false
         })
       }
     },

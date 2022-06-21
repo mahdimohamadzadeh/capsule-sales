@@ -8,20 +8,22 @@ export default {
         { title: 'صحفه ادمین', icon: 'mdi-home-city', link: '/admin-panel' },
         { title: 'پروفایل', icon: 'mdi-account', link: '/admin-panel/profile' },
         { title: 'محصولات', icon: 'mdi-basket', link: '/admin-panel/products' },
-        { title: 'اضافه کردن محصول جدید', icon: 'mdi-basket-plus', link: '/admin-panel/new-product' },
+        {
+          title: 'اضافه کردن محصول جدید',
+          icon: 'mdi-basket-plus',
+          link: '/admin-panel/new-product',
+        },
         { title: 'خانه', icon: 'mdi-home', link: '/' },
+        {
+          title: 'محصولات خریداری شده',
+          icon: 'mdi-currency-usd',
+          link: '/admin-panel/products-purchased',
+        },
       ],
       mini: true,
       group: null,
     }
   },
-  // async fetch() {
-  //   let data = await this.$http.$get('http://localhost:8082/api/users-normals')
-  //   let users = data.data
-  //   users.forEach((user) => {
-  //     this.user = user.attributes
-  //   })
-  // },
   computed: mapState(['user']),
 }
 </script>
@@ -31,7 +33,7 @@ export default {
       <v-toolbar-title class="mr-16">پنل ادمین</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer
-      height="400"
+      height="410"
       width="250"
       v-model="drawer"
       :mini-variant.sync="mini"

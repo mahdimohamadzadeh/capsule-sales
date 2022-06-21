@@ -16,7 +16,7 @@
       <h3 class="title">{{ product.title }}</h3>
       <v-card-subtitle>محصول شماره:{{ id }}</v-card-subtitle>
       <v-card-text>{{ product.description }}</v-card-text>
-      <v-card-actions>
+      <v-card-actions v-if="!admin">
         <v-btn color="error" @click="$emit('deleteProduct', id)"
           >حذف محصول</v-btn
         >
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  props: ['loading', 'product', 'id'],
+  props: ['loading', 'product', 'id','admin'],
 }
 </script>
 
