@@ -2,7 +2,7 @@
 # capsule-sales
 
 
-Site for selling various capsules with admin panel and database
+Site for selling various capsules with admin panel
 
 ## API Reference
 
@@ -41,7 +41,7 @@ Site for selling various capsules with admin panel and database
 
 Web service for public http requests is required for admin panel and web service editing
 
-Email to enter the Admin Strap panel : test@gmail.com
+Email to enter the Admin Strapi panel : test@gmail.com
 
 Password to enter the strapi admin panel: Test1234567
 
